@@ -1,6 +1,9 @@
+import { Navbar } from "./components/Navbar"
+
 const App = () => {
   return (
-    <div className="grid min-h-screen w-screen place-content-center">
+    <div className="relative min-h-screen w-screen">
+      <Navbar />
       <div className="text-4xl">Hello World!</div>
     </div>
   )

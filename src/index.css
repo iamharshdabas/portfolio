@@ -27,4 +27,15 @@
 @theme {
   --font-display: "Sinistre", sans-serif;
   --font-sans: "Raleway VF", sans-serif;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  --animate-marquee: marquee 15s linear infinite;
 }

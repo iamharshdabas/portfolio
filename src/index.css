@@ -1,1 +1,30 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: "Sinistre";
+  src: url("/fonts/sinistre/Sinistre-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Raleway VF";
+  src: url("/fonts/raleway/Raleway-VF.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Raleway VF";
+  src: url("/fonts/raleway/Raleway-Italic-VF.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@theme {
+  --font-display: "Sinistre", sans-serif;
+  --font-sans: "Raleway VF", sans-serif;
+}

@@ -1,10 +1,11 @@
 import { Navbar } from "./components/Navbar"
+import { Hero } from "./sections/Hero"
 
 const App = () => {
   return (
-    <div className="relative min-h-screen w-screen">
+    <div className="relative min-h-screen w-screen bg-dark font-sans text-light">
       <Navbar />
-      <div className="text-4xl">Hello World!</div>
+      <Hero />
     </div>
   )
 }

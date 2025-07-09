@@ -76,9 +76,9 @@ const MenuItem = ({ link, text, image, itemsRef, idx }) => {
         length: 4,
       }).map((_, idx) => (
         <Fragment key={idx}>
-          <span className="whitespace-nowrap text-2xl text-dark md:text-4xl lg:text-6xl">{text}</span>
+          <span className="whitespace-nowrap text-3xl text-dark md:text-4xl lg:text-5xl">{text}</span>
           <div
-            className="mx-[2vw] my-[1em] h-[6vh] w-[200px] shrink-0 rounded-full border-2 border-dark bg-center bg-cover"
+            className="mx-[2vw] my-[1em] h-[6vh] w-24 shrink-0 rounded-full border-2 border-dark bg-center bg-cover md:w-36 lg:w-48"
             style={{
               backgroundImage: `url(${image})`,
             }}
@@ -100,7 +100,7 @@ const MenuItem = ({ link, text, image, itemsRef, idx }) => {
       }}
     >
       <Link
-        className="relative flex h-full cursor-pointer text-4xl transition-all md:text-5xl lg:text-6xl"
+        className="relative flex h-full cursor-pointer text-3xl transition-all md:text-4xl lg:text-5xl"
         duration={1000}
         offset={0}
         onMouseEnter={handleMouseEnter}

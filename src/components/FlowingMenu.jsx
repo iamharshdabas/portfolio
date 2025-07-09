@@ -3,6 +3,7 @@
 import { gsap } from "gsap"
 import { Fragment, useMemo, useRef } from "react"
 import { Link } from "react-scroll"
+import { ImagePill } from "./ImagePill"
 
 const MenuItem = ({ link, text, image, itemsRef, idx }) => {
   const itemRef = useRef(null)
@@ -77,12 +78,7 @@ const MenuItem = ({ link, text, image, itemsRef, idx }) => {
       }).map((_, idx) => (
         <Fragment key={idx}>
           <span className="whitespace-nowrap text-3xl text-dark md:text-4xl lg:text-5xl">{text}</span>
-          <div
-            className="mx-[2vw] my-[1em] h-[6vh] w-24 shrink-0 rounded-full border-2 border-dark bg-center bg-cover md:w-36 lg:w-48"
-            style={{
-              backgroundImage: `url(${image})`,
-            }}
-          />
+          <ImagePill image={image} />
         </Fragment>
       )),
     [

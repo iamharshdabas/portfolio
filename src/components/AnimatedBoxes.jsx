@@ -1,4 +1,6 @@
-import { useFrame } from "@react-three/fiber"
+import { useGSAP } from "@gsap/react"
+import { useFrame, useThree } from "@react-three/fiber"
+import gsap from "gsap"
 import { useRef } from "react"
 import { ExtrudeGeometry, MeshPhysicalMaterial, Shape } from "three"
 
@@ -25,14 +27,11 @@ geometry.center()
 
 const material = new MeshPhysicalMaterial({
   color: "#000",
-  emissive: "#000",
-  flatShading: false,
-  ior: 1.5,
   iridescence: 1,
   iridescenceIOR: 2,
   iridescenceThicknessRange: [
-    800,
-    1000,
+    0,
+    1024,
   ],
   metalness: 1,
   reflectivity: 1,
@@ -85,4 +84,44 @@ export const AnimatedBoxes = () => {
       ))}
     </group>
   )
+}
+
+export const CameraAnimation = () => {
+  const { camera } = useThree()
+
+  useGSAP(() => {
+    camera.lookAt(100, 10, 10)
+    const tl = gsap.timeline()
+    tl.fromTo(
+      camera.position,
+      {
+        x: -25,
+        y: 0,
+        z: 10,
+      },
+      {
+        duration: 6,
+        ease: "back.InOut",
+        onUpdate: () => {
+          camera.lookAt(0, 0, 0)
+        },
+        x: 0,
+        y: 0,
+        z: 15,
+      },
+    )
+    tl.to(
+      camera.position,
+      {
+        duration: 4,
+        ease: "power1.in",
+        z: 25,
+      },
+      "<+2",
+    )
+  }, [
+    camera,
+  ])
+
+  return null
 }

@@ -1,6 +1,9 @@
+import { useGSAP } from "@gsap/react"
 import { Float, Stars } from "@react-three/drei"
 import { Canvas } from "@react-three/fiber"
-import { AnimatedBoxes } from "../components/AnimatedBoxes"
+import gsap from "gsap"
+import { useRef } from "react"
+import { AnimatedBoxes, CameraAnimation } from "../components/AnimatedBoxes"
 import { AnimatedHeader } from "../components/AnimatedHeader"
 
 const aboutText = `I help growing brands and startups gain an
@@ -8,6 +11,26 @@ unfair advantage through premium
 results driven webs/apps`
 
 export const Hero = () => {
+  const cameraRef = useRef(null)
+
+  useGSAP(() => {
+    gsap.fromTo(
+      cameraRef.current,
+      {
+        duration: 5,
+        ease: "power3.inOut",
+        x: -5,
+        y: 0,
+        z: 5,
+      },
+      {
+        duration: 5,
+        ease: "power3.inOut",
+        x: 0,
+      },
+    )
+  }, [])
+
   return (
     <section className="relative flex min-h-screen flex-col justify-end py-8 uppercase sm:py-16" id="home">
       <div className="absolute inset-0 size-full">
@@ -20,7 +43,9 @@ export const Hero = () => {
               24,
             ],
           }}
+          ref={cameraRef}
         >
+          <CameraAnimation />
           <directionalLight
             intensity={15}
             position={[
@@ -45,7 +70,7 @@ export const Hero = () => {
         </Canvas>
       </div>
       <div className="z-10">
-        <AnimatedHeader h1="harsh dabas" h2={aboutText} p="404 no bugs found" />
+        <AnimatedHeader subTitle="404 no bugs found" text={aboutText} textColor="text-light" title="harsh dabas" />
       </div>
     </section>
   )

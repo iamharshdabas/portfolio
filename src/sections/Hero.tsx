@@ -37,7 +37,7 @@ export const Hero = () => {
               1,
             ]}
             rotationIntensity={1}
-            speed={1}
+            speed={0.5}
           >
             <AnimatedBoxes />
           </Float>

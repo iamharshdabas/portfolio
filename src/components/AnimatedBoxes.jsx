@@ -17,7 +17,7 @@ const extrudeSettings = {
   bevelSize: 0.05,
   bevelThickness: 0.05,
   curveSegments: 20,
-  depth: 0.3,
+  depth: 0.2,
 }
 
 const geometry = new ExtrudeGeometry(shape, extrudeSettings)

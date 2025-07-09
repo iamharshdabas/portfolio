@@ -1,63 +1,146 @@
-import { GithubIcon, InstagramIcon, LinkedinIcon, MailIcon } from "lucide-react"
-import { useRef } from "react"
+import { useGSAP } from "@gsap/react"
+import gsap from "gsap"
+import { useEffect, useRef, useState } from "react"
+import { navbarLinks, socialLinks } from "../config/constants"
 import { FlowingMenu } from "./FlowingMenu"
-
-const items = [
-  {
-    image: "https://picsum.photos/600/400?random=1",
-    link: "home",
-    text: "home",
-  },
-  {
-    image: "https://picsum.photos/600/400?random=2",
-    link: "services",
-    text: "services",
-  },
-  {
-    image: "https://picsum.photos/600/400?random=3",
-    link: "about",
-    text: "about",
-  },
-  {
-    image: "https://picsum.photos/600/400?random=4",
-    link: "work",
-    text: "work",
-  },
-  {
-    image: "https://picsum.photos/600/400?random=5",
-    link: "contact",
-    text: "contact",
-  },
-]
 
 export const Navbar = () => {
   const navRef = useRef(null)
+  const linksRef = useRef([])
+  const contactRef = useRef(null)
+  const topLineRef = useRef(null)
+  const bottomLineRef = useRef(null)
+  const tl = useRef(null)
+  const iconTl = useRef(null)
+  const [isOpen, setIsOpen] = useState(false)
+  const [showBurger, setShowBurger] = useState(true)
+  useGSAP(() => {
+    gsap.set(navRef.current, {
+      xPercent: 100,
+    })
+    gsap.set(
+      [
+        linksRef.current,
+        contactRef.current,
+      ],
+      {
+        autoAlpha: 0,
+        x: -20,
+      },
+    )
+
+    tl.current = gsap
+      .timeline({
+        paused: true,
+      })
+      .to(navRef.current, {
+        duration: 1,
+        ease: "power3.out",
+        xPercent: 0,
+      })
+      .to(
+        linksRef.current,
+        {
+          autoAlpha: 1,
+          duration: 0.5,
+          ease: "power2.out",
+          stagger: 0.1,
+          x: 0,
+        },
+        "<",
+      )
+      .to(
+        contactRef.current,
+        {
+          autoAlpha: 1,
+          duration: 0.5,
+          ease: "power2.out",
+          x: 0,
+        },
+        "<+0.2",
+      )
+
+    iconTl.current = gsap
+      .timeline({
+        paused: true,
+      })
+      .to(topLineRef.current, {
+        duration: 0.3,
+        ease: "power2.inOut",
+        rotate: 45,
+        y: 3.3,
+      })
+      .to(
+        bottomLineRef.current,
+        {
+          duration: 0.3,
+          ease: "power2.inOut",
+          rotate: -45,
+          y: -3.3,
+        },
+        "<",
+      )
+  }, [])
+
+  useEffect(() => {
+    let lastScrollY = window.scrollY
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY
+
+      setShowBurger(currentScrollY <= lastScrollY || currentScrollY < 10)
+
+      lastScrollY = currentScrollY
+    }
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    })
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
+  const toggleMenu = () => {
+    if (isOpen) {
+      tl.current.reverse()
+      iconTl.current.reverse()
+    } else {
+      tl.current.play()
+      iconTl.current.play()
+    }
+    setIsOpen(!isOpen)
+  }
 
   return (
-    <nav
-      className="fixed right-0 z-50 flex size-full flex-col justify-between gap-8 bg-black px-8 py-24 font-display text-white/80 uppercase md:w-1/2"
-      ref={navRef}
-    >
-      <div className="flex flex-col gap-y-4">
-        <FlowingMenu items={items} />
-      </div>
-      <div className="flex gap-8 p-4">
-        <a className="transition-all duration-300 hover:text-white" href="mailto:iamharshdabas@gmail.com">
-          <MailIcon className="size-5 md:size-6 lg:size-7" />
-        </a>
-        <a className="transition-all duration-300 hover:text-white" href="https://github.com/iamharshdabas">
-          <GithubIcon className="size-5 md:size-6 lg:size-7" />
-        </a>
-        <a
-          className="transition-all duration-300 hover:text-white"
-          href="https://www.linkedin.com/in/harsh-dabas-454848300/"
-        >
-          <LinkedinIcon className="size-5 md:size-6 lg:size-7" />
-        </a>
-        <a className="transition-all duration-300 hover:text-white" href="https://www.instagram.com/iamharshdabas">
-          <InstagramIcon className="size-5 md:size-6 lg:size-7" />
-        </a>
-      </div>
-    </nav>
+    <>
+      <nav className="fixed right-0 z-40 flex size-full flex-col justify-center bg-dark md:w-1/2" ref={navRef}>
+        <div className="flex size-full flex-col gap-8 overflow-auto p-8 font-display text-light/80 uppercase ">
+          <div className="flex flex-col gap-4">
+            <FlowingMenu items={navbarLinks} itemsRef={linksRef} />
+          </div>
+          <div className="flex gap-8 p-4" ref={contactRef}>
+            {socialLinks.map((socialLink) => (
+              <a className="transition-all duration-300 hover:text-light" href={socialLink.href} key={socialLink.name}>
+                <socialLink.icon className="size-5 md:size-6 lg:size-7" />
+              </a>
+            ))}
+          </div>
+        </div>
+      </nav>
+      <button
+        className="fixed top-8.5 right-8.5 z-50 flex size-12 cursor-pointer flex-col items-center justify-center gap-1 rounded-full bg-zinc-950 transition-all duration-300 md:size-14 lg:size-16"
+        onClick={toggleMenu}
+        style={
+          showBurger || isOpen
+            ? {
+                clipPath: "circle(50% at 50% 50%)",
+              }
+            : {
+                clipPath: "circle(0% at 50% 50%)",
+              }
+        }
+        type="button"
+      >
+        <span className="h-0.5 w-8 rounded-full bg-light" ref={topLineRef}></span>
+        <span className="h-0.5 w-8 rounded-full bg-light" ref={bottomLineRef}></span>
+      </button>
+    </>
   )
 }

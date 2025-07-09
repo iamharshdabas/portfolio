@@ -4,7 +4,7 @@ import { gsap } from "gsap"
 import { Fragment, useMemo, useRef } from "react"
 import { Link } from "react-scroll"
 
-const MenuItem = ({ link, text, image }) => {
+const MenuItem = ({ link, text, image, itemsRef, idx }) => {
   const itemRef = useRef(null)
   const marqueeRef = useRef(null)
   const marqueeInnerRef = useRef(null)
@@ -76,9 +76,9 @@ const MenuItem = ({ link, text, image }) => {
         length: 4,
       }).map((_, idx) => (
         <Fragment key={idx}>
-          <span className="whitespace-nowrap text-2xl text-black md:text-4xl lg:text-6xl">{text}</span>
+          <span className="whitespace-nowrap text-2xl text-dark md:text-4xl lg:text-6xl">{text}</span>
           <div
-            className="mx-[2vw] my-[1em] h-[6vh] w-[200px] shrink-0 rounded-full bg-center bg-cover"
+            className="mx-[2vw] my-[1em] h-[6vh] w-[200px] shrink-0 rounded-full border-2 border-dark bg-center bg-cover"
             style={{
               backgroundImage: `url(${image})`,
             }}
@@ -92,10 +92,16 @@ const MenuItem = ({ link, text, image }) => {
   )
 
   return (
-    <div className="relative flex-1 overflow-hidden rounded-4xl p-4" ref={itemRef}>
+    <div
+      className="relative flex-1 overflow-hidden rounded-4xl p-4"
+      ref={(el) => {
+        itemRef.current = el
+        itemsRef.current[idx] = el
+      }}
+    >
       <Link
         className="relative flex h-full cursor-pointer text-4xl transition-all md:text-5xl lg:text-6xl"
-        duration={2000}
+        duration={1000}
         offset={0}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
@@ -105,7 +111,7 @@ const MenuItem = ({ link, text, image }) => {
         {text}
       </Link>
       <div
-        className="pointer-events-none absolute top-0 left-0 h-full w-full translate-y-[101%] overflow-hidden bg-white"
+        className="pointer-events-none absolute top-0 left-0 h-full w-full translate-y-[101%] overflow-hidden bg-light"
         ref={marqueeRef}
       >
         <div className="flex h-full w-full" ref={marqueeInnerRef}>
@@ -119,6 +125,6 @@ const MenuItem = ({ link, text, image }) => {
   )
 }
 
-export const FlowingMenu = ({ items = [] }) => {
-  return items.map((item, idx) => <MenuItem key={idx} {...item} />)
+export const FlowingMenu = ({ items = [], itemsRef }) => {
+  return items.map((item, idx) => <MenuItem idx={idx} itemsRef={itemsRef} key={idx} {...item} />)
 }

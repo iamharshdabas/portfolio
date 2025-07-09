@@ -6,7 +6,7 @@ import { AnimatedLine } from "./AnimatedLine"
 
 gsap.registerPlugin(ScrollTrigger)
 
-export const AnimatedHeader = ({ subTitle, title, text, textColor, withScrollTrigger = false }) => {
+export const AnimatedHeader = ({ subTitle, title, text, withScrollTrigger = false }) => {
   const contextRef = useRef(null)
   const headerRef = useRef(null)
   useGSAP(() => {
@@ -35,7 +35,7 @@ export const AnimatedHeader = ({ subTitle, title, text, textColor, withScrollTri
   }, [])
 
   return (
-    <div className={textColor} ref={contextRef}>
+    <div ref={contextRef}>
       <div
         style={{
           clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",

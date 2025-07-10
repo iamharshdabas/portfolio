@@ -81,166 +81,66 @@ export const servicesData = [
 
 export const projectsData = [
   {
-    bgImage: "/assets/backgrounds/blanket.jpg",
+    bgImage: "https://picsum.photos/600/400?random=1",
     description:
-      "An online store specializing in phone accessories including cases, chargers, cables, and power banks with MagSafe compatibility.",
+      "A dynamic pricing solution that provides a banner via an API to display coupons based on user geolocation. It helps businesses optimize product pricing across countries, aiming to capture untapped markets with location-based discounts.",
     frameworks: [
       {
         id: 1,
-        name: "React",
-      },
-      {
-        id: 2,
         name: "Next.js",
       },
       {
+        id: 2,
+        name: "React",
+      },
+      {
         id: 3,
-        name: "Node.js",
+        name: "TypeScript",
       },
       {
         id: 4,
-        name: "MongoDB",
+        name: "Drizzle ORM",
       },
       {
         id: 5,
         name: "Tailwind CSS",
       },
+      {
+        id: 6,
+        name: "Stripe",
+      },
+      {
+        id: 7,
+        name: "Clerk",
+      },
     ],
-    href: "",
+    href: "https://github.com/iamharshdabas/parity-deals",
     id: 1,
-    image: "/assets/projects/mobile-accessories-store.jpg",
-    name: "Mobile Accessories E-commerce",
+    image: "images/1.webp",
+    name: "Parity Deals",
   },
   {
-    bgImage: "/assets/backgrounds/curtains.jpg",
-    description: "An online store specializing in rare and decorative plants with a clean, user-friendly interface.",
-    frameworks: [
-      {
-        id: 1,
-        name: "React",
-      },
-      {
-        id: 2,
-        name: "Next.js",
-      },
-      {
-        id: 3,
-        name: "Stripe API",
-      },
-      {
-        id: 4,
-        name: "Tailwind CSS",
-      },
-    ],
-    href: "",
-    id: 2,
-    image: "/assets/projects/plant-shop.jpg",
-    name: "Plant Shop E-commerce",
-  },
-  {
-    bgImage: "/assets/backgrounds/map.jpg",
-    description: "An e-commerce platform for Apple products and accessories with deals and category filtering.",
-    frameworks: [
-      {
-        id: 1,
-        name: "Blazor",
-      },
-      {
-        id: 2,
-        name: "ASP.NET Core",
-      },
-      {
-        id: 3,
-        name: "SQL Server",
-      },
-      {
-        id: 4,
-        name: "Bootstrap",
-      },
-    ],
-    href: "",
-    id: 3,
-    image: "/assets/projects/apple-tech-store.jpg",
-    name: "Apple Tech Marketplace",
-  },
-  {
-    bgImage: "/assets/backgrounds/poster.jpg",
+    bgImage: "https://picsum.photos/600/400?random=2",
     description:
-      "A multi-category online shop featuring electronics, home appliances, and gaming gear with special offers.",
+      "An experimental project that transforms plain text into unique, algorithmically generated waveform audio (WAV). Inspired by chill phonk, it converts text to binary sequences which then determine musical notes and rhythmic patterns.",
     frameworks: [
       {
         id: 1,
-        name: "Vue.js",
+        name: "TypeScript",
       },
       {
         id: 2,
-        name: "Laravel",
+        name: "Bun",
       },
       {
         id: 3,
-        name: "MySQL",
-      },
-      {
-        id: 4,
-        name: "SCSS",
+        name: "Web Audio API",
       },
     ],
-    href: "",
-    id: 4,
-    image: "/assets/projects/electronics-store.jpg",
-    name: "Electronics & Gadgets Store",
-  },
-  {
-    bgImage: "/assets/backgrounds/table.jpg",
-    description: "A curated collection of designer home decor items, including furniture and artisan vases.",
-    frameworks: [
-      {
-        id: 1,
-        name: "Angular",
-      },
-      {
-        id: 2,
-        name: "Firebase",
-      },
-      {
-        id: 3,
-        name: "GraphQL",
-      },
-      {
-        id: 4,
-        name: "Material UI",
-      },
-    ],
-    href: "",
-    id: 5,
-    image: "/assets/projects/home-decor-store.jpg",
-    name: "Home Decor Marketplace",
-  },
-  {
-    bgImage: "/assets/backgrounds/curtains.jpg",
-    description: "A gaming platform featuring discounted titles, top sellers, and genre-based browsing.",
-    frameworks: [
-      {
-        id: 1,
-        name: "Svelte",
-      },
-      {
-        id: 2,
-        name: "Node.js",
-      },
-      {
-        id: 3,
-        name: "MongoDB",
-      },
-      {
-        id: 4,
-        name: "Chakra UI",
-      },
-    ],
-    href: "",
-    id: 6,
-    image: "/assets/projects/game-store.jpg",
-    name: "Digital Game Store",
+    href: "https://github.com/iamharshdabas/wavify",
+    id: 2,
+    image: "images/2.webp",
+    name: "Wavify",
   },
 ]
 

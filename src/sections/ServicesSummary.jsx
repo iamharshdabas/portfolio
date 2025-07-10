@@ -12,28 +12,28 @@ export const ServicesSummary = () => {
         scrub: true,
         target: "#title-service-1",
       },
-      xPercent: -20,
+      xPercent: -60,
     })
     gsap.to("#title-service-2", {
       scrollTrigger: {
         scrub: true,
         target: "#title-service-2",
       },
-      xPercent: 60,
+      xPercent: 100,
     })
     gsap.to("#title-service-3", {
       scrollTrigger: {
         scrub: true,
         target: "#title-service-3",
       },
-      xPercent: -60,
+      xPercent: -100,
     })
     gsap.to("#title-service-4", {
       scrollTrigger: {
         scrub: true,
         target: "#title-service-4",
       },
-      xPercent: 20,
+      xPercent: 60,
     })
   })
 

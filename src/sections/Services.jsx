@@ -55,7 +55,7 @@ export const Services = () => {
                 ? `calc(8vh + ${index * 3.5}rem)`
                 : isMd
                   ? `calc(8vh + ${index * 4.5}rem)`
-                  : `calc(8vh + ${index * 6.25}rem)`,
+                  : `calc(8vh + ${index * 6}rem)`,
             }}
           >
             <div className="flex flex-col gap-4">

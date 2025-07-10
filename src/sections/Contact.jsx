@@ -29,10 +29,7 @@ const Contact = () => {
     })
   }, [])
   return (
-    <section
-      className="flex min-h-screen flex-col justify-between gap-8 bg-dark pt-8 text-light sm:pt-16 lg:gap-16"
-      id="contact"
-    >
+    <section className="flex min-h-screen flex-col justify-between bg-dark pt-8 text-light sm:pt-16" id="contact">
       <div>
         <AnimatedHeader
           lineColor={"bg-light"}

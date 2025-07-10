@@ -110,7 +110,7 @@ const Works = () => {
       <div className="relative flex flex-col font-light" onMouseMove={handleMouseMove}>
         {projectsData.map((project, index) => (
           <div
-            className="group relative flex cursor-pointer flex-col gap-1 py-6 md:gap-0"
+            className="group relative flex flex-col gap-1 py-6 md:gap-0"
             id="project"
             key={project.id}
             onMouseEnter={() => handleMouseEnter(index)}
@@ -128,12 +128,17 @@ const Works = () => {
             />
 
             {/* title */}
-            <div className="flex justify-between px-4 text-dark transition-all duration-700 md:group-hover:px-8 md:group-hover:text-light">
+            <a
+              className="flex items-center justify-between px-4 text-dark transition-all duration-700 md:group-hover:px-8 md:group-hover:text-light"
+              href={project.href}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
               <h2 className="text-2xl leading-none lg:text-3xl">{project.name}</h2>
               <ArrowUpRightIcon />
-            </div>
+            </a>
             {/* divider */}
-            <div className="h-[1px] w-full bg-dark" />
+            <div className="h-px w-full bg-dark" />
             {/* framework */}
             <div className="transtion-all flex gap-x-4 px-4 text-xs uppercase leading-loose duration-500 md:text-sm md:group-hover:px-8">
               {project.frameworks.map((framework) => (

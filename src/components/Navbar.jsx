@@ -120,7 +120,7 @@ export const Navbar = () => {
           </div>
           <div className="flex gap-8 p-4" ref={contactRef}>
             {socialLinks.map((socialLink) => (
-              <a href={socialLink.href} key={socialLink.name} target="_blank">
+              <a href={socialLink.href} key={socialLink.name} rel="noopener noreferrer" target="_blank">
                 <socialLink.icon className="size-5 md:size-6 lg:size-7" />
               </a>
             ))}

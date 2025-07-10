@@ -44,7 +44,7 @@ export const AnimatedHeader = ({ subTitle, title, text, lineColor = "bg-light", 
         <div className="relative" ref={headerRef}>
           <p className="px-4 pb-4 font-light text-sm tracking-widest sm:px-8">{subTitle}</p>
           <h1 className="px-4 font-display text-6xl sm:px-8 sm:text-7xl md:text-8xl">{title}</h1>
-          <div className={`absolute right-0 bottom-0 left-0 h-[1px] ${lineColor}`} />
+          <div className={`absolute right-0 bottom-0 left-0 h-px ${lineColor}`} />
         </div>
       </div>
       <AnimatedLine className="flex flex-col items-end px-4 pt-8 text-end text-sm sm:px-8 md:text-base" text={text} />

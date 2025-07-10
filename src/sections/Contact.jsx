@@ -41,28 +41,29 @@ const Contact = () => {
           title={"Contact"}
           withScrollTrigger={true}
         />
-        <div className="flex flex-col gap-8 px-4 font-display text-xl uppercase tracking-widest sm:px-8 md:text-2xl lg::gap-16 lg:text-3xl">
+        <div className="flex flex-col gap-8 px-4 pt-8 font-display text-xl uppercase tracking-widest sm:px-8 md:text-2xl lg::gap-16 lg:text-3xl">
           <div className="social-link">
             <h2>E-mail</h2>
-            <div className="my-2 h-px w-full bg-light/20" />
+            <div className="h-px w-full bg-light/20" />
             <p>{socialLinks[0].href.slice(7)}</p>
           </div>
 
           <div className="social-link">
             <h2>Phone</h2>
-            <div className="my-2 h-px w-full bg-light/20" />
+            <div className="h-px w-full bg-light/20" />
             <p>+91 88105 76690</p>
           </div>
 
           <div className="social-link">
             <h2>Social Media</h2>
-            <div className="my-2 h-px w-full bg-light/20" />
-            <div className="flex flex-wrap gap-8 lg:gap-16">
+            <div className="h-px w-full bg-light/20" />
+            <div className="flex flex-wrap gap-x-8 lg:gap-x-16">
               {socialLinks.map((social) => (
                 <a
                   className="text-lg leading-loose tracking-widest opacity-80 transition-all duration-300 hover:opacity-100 md:text-xl lg:text-2xl"
                   href={social.href}
                   key={social.name}
+                  rel="noopener noreferrer"
                 >
                   {"{ "}
                   {social.name}

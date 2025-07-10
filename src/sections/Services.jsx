@@ -67,7 +67,7 @@ export const Services = () => {
                     <span className="mr-4 font-medium opacity-40">{`0${index + 1}`}</span>
                     {item.title}
                   </h3>
-                  {index < service.items.length - 1 && <div className="h-[1px] rounded-full bg-light/20"></div>}
+                  {index < service.items.length - 1 && <div className="h-px rounded-full bg-light/20"></div>}
                 </div>
               ))}
             </div>

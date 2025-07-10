@@ -1,6 +1,8 @@
 import { ReactLenis } from "lenis/react"
 import { Navbar } from "./components/Navbar"
 import { About } from "./sections/About"
+import Contact from "./sections/Contact"
+import ContactSummary from "./sections/ContactSummary"
 import { Hero } from "./sections/Hero"
 import { Services } from "./sections/Services"
 import { ServicesSummary } from "./sections/ServicesSummary"
@@ -16,6 +18,8 @@ const App = () => {
         <Services />
         <About />
         <Works />
+        <ContactSummary />
+        <Contact />
       </div>
     </ReactLenis>
   )

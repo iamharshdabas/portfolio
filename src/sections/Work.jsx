@@ -128,14 +128,14 @@ const Works = () => {
             />
 
             {/* title */}
-            <div className="flex justify-between px-8 text-dark transition-all duration-700 md:group-hover:px-16 md:group-hover:text-light">
+            <div className="flex justify-between px-4 text-dark transition-all duration-700 md:group-hover:px-8 md:group-hover:text-light">
               <h2 className="text-2xl leading-none lg:text-3xl">{project.name}</h2>
               <ArrowUpRightIcon />
             </div>
             {/* divider */}
             <div className="h-[1px] w-full bg-dark" />
             {/* framework */}
-            <div className="transtion-all flex gap-x-4 px-8 text-xs uppercase leading-loose duration-500 md:text-sm md:group-hover:px-16">
+            <div className="transtion-all flex gap-x-4 px-4 text-xs uppercase leading-loose duration-500 md:text-sm md:group-hover:px-8">
               {project.frameworks.map((framework) => (
                 <p className="text-dark transition-colors duration-500 md:group-hover:text-light" key={framework.id}>
                   {framework.name}
@@ -143,14 +143,14 @@ const Works = () => {
               ))}
             </div>
             {/* mobile preview image */}
-            <div className="px-8 md:hidden">
+            <div className="px-4 md:hidden">
               <div className="relative flex items-center justify-center">
                 <img
                   alt={`${project.name}-bg-image`}
                   className="h-full w-full rounded-xl object-cover brightness-40"
                   src={project.bgImage}
                 />
-                <img alt={`${project.name}-image`} className="absolute rounded-xl bg-center px-8" src={project.image} />
+                <img alt={`${project.name}-image`} className="absolute rounded-xl bg-center px-4" src={project.image} />
               </div>
               <Desc className="pt-4" text={project.description} />
             </div>

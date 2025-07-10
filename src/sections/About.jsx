@@ -50,7 +50,7 @@ export const About = () => {
         title={"About"}
         withScrollTrigger={true}
       />
-      <div className="flex flex-col items-center justify-between gap-16 px-4 text-lg text-white/60 tracking-wide sm:px-8 md:text-xl lg:flex-row lg:text-2xl">
+      <div className="flex flex-col items-center justify-between gap-16 px-4 text-lg text-light/60 tracking-wide sm:px-8 md:text-xl lg:flex-row lg:text-2xl">
         <img alt="Harsh Dabas" className="w-md rounded-3xl" ref={imgRef} src="images/me.webp" />
         <AnimatedLine className={"w-full"} text={aboutText} />
       </div>

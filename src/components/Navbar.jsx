@@ -114,7 +114,7 @@ export const Navbar = () => {
         className="fixed right-0 z-40 flex size-full flex-col justify-center bg-dark text-light md:w-1/2"
         ref={navRef}
       >
-        <div className="flex size-full flex-col justify-center gap-8 px-8 font-display uppercase ">
+        <div className="flex size-full flex-col justify-center gap-8 px-4 font-display uppercase sm:px-8 ">
           <div className="flex flex-col gap-4">
             <FlowingMenu items={navbarLinks} itemsRef={linksRef} />
           </div>

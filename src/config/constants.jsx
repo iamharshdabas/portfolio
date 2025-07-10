@@ -146,7 +146,7 @@ export const projectsData = [
 
 export const socialLinks = [
   {
-    href: "mailto:iamharshdabas",
+    href: "mailto:iamharshdabas@gmail.com",
     icon: MailIcon,
     name: "Mail",
   },

@@ -140,7 +140,7 @@ const Works = () => {
             {/* divider */}
             <div className="h-px w-full bg-dark" />
             {/* framework */}
-            <div className="transtion-all flex gap-x-4 px-4 text-xs uppercase leading-loose duration-500 md:text-sm md:group-hover:px-8">
+            <div className="transtion-all flex flex-wrap gap-x-4 px-4 text-xs uppercase leading-loose duration-500 md:text-sm md:group-hover:px-8">
               {project.frameworks.map((framework) => (
                 <p className="text-dark transition-colors duration-500 md:group-hover:text-light" key={framework.id}>
                   {framework.name}

@@ -13,13 +13,15 @@ const App = () => {
     <ReactLenis root>
       <div className="relative min-h-screen w-screen bg-light font-sans text-dark">
         <Navbar />
-        <Hero />
-        <ServicesSummary />
-        <Services />
-        <About />
-        <Works />
-        <ContactSummary />
-        <Contact />
+        <main>
+          <Hero />
+          <ServicesSummary />
+          <Services />
+          <About />
+          <Works />
+          <ContactSummary />
+          <Contact />
+        </main>
       </div>
     </ReactLenis>
   )

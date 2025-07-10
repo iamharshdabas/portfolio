@@ -151,11 +151,15 @@ const Works = () => {
             <div className="px-4 md:hidden">
               <div className="relative flex items-center justify-center">
                 <img
-                  alt={`${project.name}-bg-image`}
+                  alt={`${project.name} background`}
                   className="h-full w-full rounded-xl object-cover brightness-40"
                   src={project.bgImage}
                 />
-                <img alt={`${project.name}-image`} className="absolute rounded-xl bg-center px-4" src={project.image} />
+                <img
+                  alt={`${project.name} preview`}
+                  className="absolute rounded-xl bg-center px-4"
+                  src={project.image}
+                />
               </div>
               <Desc className="pt-4" text={project.description} />
             </div>
@@ -168,7 +172,11 @@ const Works = () => {
         >
           {currentIndex !== null && (
             <>
-              <img alt="preview" className="h-full w-full object-cover" src={projectsData[currentIndex].image} />
+              <img
+                alt={`${projectsData[currentIndex].name} preview`}
+                className="h-full w-full object-cover"
+                src={projectsData[currentIndex].image}
+              />
               <Desc className="p-4" text={projectsData[currentIndex].description} />
             </>
           )}

@@ -3,79 +3,79 @@ import { GithubIcon, InstagramIcon, LinkedinIcon, MailIcon } from "lucide-react"
 export const servicesData = [
   {
     description:
-      "Your business deserves a fast, secure, and future-proof digital foundation. I develop custom web apps with clean architecture, optimized databases, and seamless integrations—ensuring reliability at every layer.",
+      "I build fast, responsive, and scalable web applications from the ground up. With a focus on clean architecture and modern technologies, I can deliver a complete front-to-back solution that meets your business needs.",
     items: [
       {
-        description: "(REST/GraphQL APIs, Microservices, Auth Systems)",
-        title: "Backend Engineering",
+        description: "(Next.js, React, TypeScript, Tailwind CSS)",
+        title: "Frontend Development",
       },
       {
-        description: "(React, Vue, TypeScript, Interactive UI/UX)",
-        title: "Frontend Excellence",
+        description: "(Node.js, Express, TypeScript)",
+        title: "Backend Development",
       },
       {
-        description: "(SQL/NoSQL Optimization, Scalable Structures)",
-        title: "Database Design",
+        description: "(PostgreSQL, SQLite, Drizzle ORM)",
+        title: "Database Management",
       },
     ],
-    title: "FullStack Development",
+    title: "Full-Stack Development",
   },
   {
     description:
-      "Deploying software shouldn't be a gamble. I automate infrastructure, enforce security, and leverage cloud platforms (AWS/Azure) to keep your app running smoothly—24/7, at any scale.",
+      "I bring digital experiences to life with interactive 3D graphics and animations. Using modern web technologies, I can create engaging and immersive visuals for your web applications.",
     items: [
       {
-        description: "(GitHub Actions, Docker, Kubernetes)",
+        description: "(Three.js, React Three Fiber)",
+        title: "3D Web Graphics",
+      },
+      {
+        description: "(GSAP)",
+        title: "Interactive Animations",
+      },
+      {
+        description: "(Web Audio API)",
+        title: "Creative Audio Solutions",
+      },
+    ],
+    title: "Creative & 3D Development",
+  },
+  {
+    description:
+      "I design and build robust and secure APIs to power your applications. I have experience with RESTful APIs, authentication, and integrating third-party services.",
+    items: [
+      {
+        description: "(RESTful APIs, Express)",
+        title: "API Design & Development",
+      },
+      {
+        description: "(JWT, bcrypt, Clerk)",
+        title: "Authentication Systems",
+      },
+      {
+        description: "(Stripe)",
+        title: "Third-Party API Integration",
+      },
+    ],
+    title: "API & Backend Services",
+  },
+  {
+    description:
+      "I can help you automate your development and deployment workflows. I have experience with setting up CI/CD pipelines and containerizing applications.",
+    items: [
+      {
+        description: "(GitHub Actions)",
         title: "CI/CD Pipelines",
       },
       {
-        description: "(Linux, Nginx, Load Balancing)",
-        title: "Server Management ",
+        description: "(Docker)",
+        title: "Containerization",
       },
       {
-        description: "(Caching, Compression, Lighthouse 90+ Scores)",
-        title: "Performance Tuning",
+        description: "(Vite, Bun)",
+        title: "Modern Build Tools",
       },
     ],
-    title: "DevOps & Cloud Solutions",
-  },
-  {
-    description:
-      "Slow or hacked apps destroy trust. I harden security (XSS/SQLI protection, OAuth) and optimize bottlenecks so your app stays fast, safe, and scalable as you grow.",
-    items: [
-      {
-        description: "(Refactoring, Tech Debt Cleanup)",
-        title: "Code Audits",
-      },
-      {
-        description: "(Vulnerability Assessments)",
-        title: "Pen Testing",
-      },
-      {
-        description: "(SSR, Metadata, Structured Data)",
-        title: "SEO Tech Stack",
-      },
-    ],
-    title: "Security & Optimization",
-  },
-  {
-    description:
-      "A clunky interface can sink even the best ideas. I craft responsive, pixel perfect web and mobile apps (React Native/Flutter) that users love—bridging design and functionality seamlessly.",
-    items: [
-      {
-        description: "(Single codebase for iOS/Android/Web)",
-        title: "Cross-Platform Apps",
-      },
-      {
-        description: "(Offline mode, Push Notifications)",
-        title: "PWAs",
-      },
-      {
-        description: "(Checkout flows, Payment Gateways, Inventory APIs)",
-        title: "E-Commerce",
-      },
-    ],
-    title: "Web & Mobile Apps",
+    title: "DevOps & Tooling",
   },
 ]
 

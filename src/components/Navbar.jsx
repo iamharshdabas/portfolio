@@ -120,7 +120,13 @@ export const Navbar = () => {
           </div>
           <div className="flex gap-8 p-4" ref={contactRef}>
             {socialLinks.map((socialLink) => (
-              <a href={socialLink.href} key={socialLink.name} rel="noopener noreferrer" target="_blank">
+              <a
+                aria-label={socialLink.name}
+                href={socialLink.href}
+                key={socialLink.name}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
                 <socialLink.icon className="size-5 md:size-6 lg:size-7" />
               </a>
             ))}
@@ -128,6 +134,7 @@ export const Navbar = () => {
         </div>
       </nav>
       <button
+        aria-label="nav bar toggle"
         className="fixed top-8 right-8 z-50 flex size-10 cursor-pointer flex-col items-center justify-center gap-1 rounded-full bg-dark transition-all duration-300 md:size-12 lg:size-14"
         onClick={toggleMenu}
         style={

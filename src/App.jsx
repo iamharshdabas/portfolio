@@ -1,12 +1,30 @@
 import { ReactLenis } from "lenis/react"
+import { lazy, Suspense } from "react"
 import { Navbar } from "./components/Navbar"
-import { About } from "./sections/About"
-import Contact from "./sections/Contact"
-import ContactSummary from "./sections/ContactSummary"
-import { Hero } from "./sections/Hero"
-import { Services } from "./sections/Services"
-import { ServicesSummary } from "./sections/ServicesSummary"
-import Works from "./sections/Work"
+
+const About = lazy(() =>
+  import("./sections/About").then((module) => ({
+    default: module.About,
+  })),
+)
+const Contact = lazy(() => import("./sections/Contact"))
+const ContactSummary = lazy(() => import("./sections/ContactSummary"))
+const Hero = lazy(() =>
+  import("./sections/Hero").then((module) => ({
+    default: module.Hero,
+  })),
+)
+const Services = lazy(() =>
+  import("./sections/Services").then((module) => ({
+    default: module.Services,
+  })),
+)
+const ServicesSummary = lazy(() =>
+  import("./sections/ServicesSummary").then((module) => ({
+    default: module.ServicesSummary,
+  })),
+)
+const Works = lazy(() => import("./sections/Work"))
 
 const App = () => {
   return (
@@ -14,13 +32,15 @@ const App = () => {
       <div className="relative min-h-screen w-screen bg-light font-sans text-dark">
         <Navbar />
         <main>
-          <Hero />
-          <ServicesSummary />
-          <Services />
-          <About />
-          <Works />
-          <ContactSummary />
-          <Contact />
+          <Suspense fallback={<div />}>
+            <Hero />
+            <ServicesSummary />
+            <Services />
+            <About />
+            <Works />
+            <ContactSummary />
+            <Contact />
+          </Suspense>
         </main>
       </div>
     </ReactLenis>

@@ -111,10 +111,10 @@ export const Navbar = () => {
   return (
     <>
       <nav
-        className="fixed right-0 z-40 flex size-full flex-col justify-center bg-dark/80 backdrop-blur-2xl md:w-1/2"
+        className="fixed right-0 z-40 flex size-full flex-col justify-center bg-dark text-light md:w-1/2"
         ref={navRef}
       >
-        <div className="flex size-full flex-col gap-8 overflow-auto p-8 font-display uppercase ">
+        <div className="flex size-full flex-col justify-center gap-8 px-8 font-display uppercase ">
           <div className="flex flex-col gap-4">
             <FlowingMenu items={navbarLinks} itemsRef={linksRef} />
           </div>
@@ -128,7 +128,7 @@ export const Navbar = () => {
         </div>
       </nav>
       <button
-        className="fixed top-8.5 right-8.5 z-50 flex size-8 cursor-pointer flex-col items-center justify-center gap-1 rounded-full bg-dark transition-all duration-300 md:size-10 lg:size-12"
+        className="fixed top-8 right-8 z-50 flex size-10 cursor-pointer flex-col items-center justify-center gap-1 rounded-full bg-dark transition-all duration-300 md:size-12 lg:size-14"
         onClick={toggleMenu}
         style={
           showBurger || isOpen
@@ -141,8 +141,8 @@ export const Navbar = () => {
         }
         type="button"
       >
-        <span className="h-0.5 w-6 rounded-full bg-light" ref={topLineRef}></span>
-        <span className="h-0.5 w-6 rounded-full bg-light" ref={bottomLineRef}></span>
+        <span className="h-0.5 w-2/3 rounded-full bg-light" ref={topLineRef}></span>
+        <span className="h-0.5 w-2/3 rounded-full bg-light" ref={bottomLineRef}></span>
       </button>
     </>
   )

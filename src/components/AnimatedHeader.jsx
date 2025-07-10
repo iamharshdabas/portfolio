@@ -6,7 +6,7 @@ import { AnimatedLine } from "./AnimatedLine"
 
 gsap.registerPlugin(ScrollTrigger)
 
-export const AnimatedHeader = ({ subTitle, title, text, withScrollTrigger = false }) => {
+export const AnimatedHeader = ({ subTitle, title, text, lineColor = "bg-light", withScrollTrigger = false }) => {
   const contextRef = useRef(null)
   const headerRef = useRef(null)
   useGSAP(() => {
@@ -35,7 +35,7 @@ export const AnimatedHeader = ({ subTitle, title, text, withScrollTrigger = fals
   }, [])
 
   return (
-    <div ref={contextRef}>
+    <div className="uppercase" ref={contextRef}>
       <div
         style={{
           clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
@@ -44,7 +44,7 @@ export const AnimatedHeader = ({ subTitle, title, text, withScrollTrigger = fals
         <div className="relative" ref={headerRef}>
           <p className="px-4 pb-4 font-light text-sm tracking-widest sm:px-8">{subTitle}</p>
           <h1 className="px-4 font-display text-6xl sm:px-8 sm:text-7xl md:text-8xl">{title}</h1>
-          <div className="absolute right-0 bottom-0 left-0 h-[1px] bg-light" />
+          <div className={`absolute right-0 bottom-0 left-0 h-[1px] ${lineColor}`} />
         </div>
       </div>
       <AnimatedLine className="flex flex-col items-end px-4 pt-8 text-end text-sm sm:px-8 md:text-base" text={text} />

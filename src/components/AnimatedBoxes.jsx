@@ -1,6 +1,4 @@
-import { useGSAP } from "@gsap/react"
-import { useFrame, useThree } from "@react-three/fiber"
-import gsap from "gsap"
+import { useFrame } from "@react-three/fiber"
 import { useRef } from "react"
 import { ExtrudeGeometry, MeshPhysicalMaterial, Shape } from "three"
 
@@ -84,44 +82,4 @@ export const AnimatedBoxes = () => {
       ))}
     </group>
   )
-}
-
-export const CameraAnimation = () => {
-  const { camera } = useThree()
-
-  useGSAP(() => {
-    camera.lookAt(100, 10, 10)
-    const tl = gsap.timeline()
-    tl.fromTo(
-      camera.position,
-      {
-        x: -25,
-        y: 0,
-        z: 10,
-      },
-      {
-        duration: 6,
-        ease: "back.InOut",
-        onUpdate: () => {
-          camera.lookAt(0, 0, 0)
-        },
-        x: 0,
-        y: 0,
-        z: 15,
-      },
-    )
-    tl.to(
-      camera.position,
-      {
-        duration: 4,
-        ease: "power1.in",
-        z: 25,
-      },
-      "<+2",
-    )
-  }, [
-    camera,
-  ])
-
-  return null
 }

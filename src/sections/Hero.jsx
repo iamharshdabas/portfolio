@@ -1,6 +1,6 @@
-import { Float, Stars } from "@react-three/drei"
+import { Float } from "@react-three/drei"
 import { Canvas } from "@react-three/fiber"
-import { AnimatedBoxes, CameraAnimation } from "../components/AnimatedBoxes"
+import { AnimatedBoxes } from "../components/AnimatedBoxes"
 import { AnimatedHeader } from "../components/AnimatedHeader"
 
 const text = `I help growing brands and startups gain an
@@ -9,11 +9,11 @@ results driven webs/apps`
 
 export const Hero = () => {
   return (
-    <section className="relative flex min-h-screen flex-col justify-end py-8 uppercase sm:py-16" id="home">
+    <section className="relative flex min-h-screen flex-col justify-end py-8 sm:py-16" id="home">
       <div className="absolute inset-0 size-full">
         <Canvas
           camera={{
-            fov: 40,
+            fov: 36,
             position: [
               0,
               0,
@@ -21,7 +21,6 @@ export const Hero = () => {
             ],
           }}
         >
-          <CameraAnimation />
           <directionalLight
             intensity={15}
             position={[
@@ -42,11 +41,10 @@ export const Hero = () => {
           >
             <AnimatedBoxes />
           </Float>
-          <Stars count={5000} depth={5} factor={4} fade radius={100} saturation={0} speed={1} />
         </Canvas>
       </div>
       <div className="z-10">
-        <AnimatedHeader subTitle="404 no bugs found" text={text} title="harsh dabas" />
+        <AnimatedHeader lineColor="bg-dark" subTitle="404 no bugs found" text={text} title="harsh dabas" />
       </div>
     </section>
   )

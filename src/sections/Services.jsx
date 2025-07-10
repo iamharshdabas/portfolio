@@ -38,7 +38,7 @@ export const Services = () => {
 
   return (
     <section
-      className="flex min-h-screen flex-col gap-8 rounded-t-4xl bg-dark py-8 text-light sm:py-16 lg:gap-16"
+      className="flex min-h-screen flex-col gap-8 rounded-t-4xl bg-dark py-8 text-light sm:py-16 md:mx-4 lg:gap-16"
       id="services"
     >
       <AnimatedHeader subTitle="behind the scene, beyond the screen" text={text} title="services" withScrollTrigger />

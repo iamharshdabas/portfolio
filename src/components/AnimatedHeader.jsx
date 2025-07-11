@@ -14,7 +14,7 @@ export const AnimatedHeader = ({ subTitle, title, text, lineColor = "bg-light", 
       scrollTrigger: withScrollTrigger
         ? {
             start: "top 90%",
-            end: "top 50%",
+            end: "top 60%",
             trigger: contextRef.current,
           }
         : undefined,

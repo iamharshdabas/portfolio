@@ -39,6 +39,8 @@ const Works = () => {
       ease: "back.out",
       opacity: 0,
       scrollTrigger: {
+        start: "top 90%",
+        end: "top 60%",
         trigger: "#project",
       },
       stagger: 0.5,

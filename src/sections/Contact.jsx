@@ -24,7 +24,7 @@ const Contact = () => {
       scrollTrigger: {
         trigger: ".social-link",
       },
-      stagger: 0.3,
+      stagger: 0.2,
       y: 100,
     })
   }, [])

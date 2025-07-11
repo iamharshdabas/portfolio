@@ -17,7 +17,7 @@ export const AnimatedLine = ({ text, className }) => {
         opacity: 0,
         scrollTrigger: {
           start: "top 90%",
-          end: "top 50%",
+          end: "top 60%",
           trigger: containerRef.current,
         },
         stagger: 0.5,

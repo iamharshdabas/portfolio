@@ -25,7 +25,6 @@ const ContactSummary = () => {
     gsap.to(containerRef.current, {
       scrollTrigger: {
         end: "+=800 center",
-        markers: false,
         pin: true,
         pinSpacing: true,
         scrub: 0.5,

@@ -20,7 +20,6 @@ export const About = () => {
       scale: 0.95,
       scrollTrigger: {
         end: "bottom 20%",
-        markers: false,
         scrub: true,
         start: "bottom 80%",
         trigger: "#about",

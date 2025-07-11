@@ -1,4 +1,5 @@
 import { useFrame } from "@react-three/fiber"
+import { useMediaQuery } from "react-responsive"
 import { useRef } from "react"
 import { ExtrudeGeometry, MeshPhysicalMaterial, Shape } from "three"
 
@@ -42,6 +43,11 @@ const Box = ({ position, rotation }) => {
 
 export const AnimatedBoxes = () => {
   const groupRef = useRef()
+  const isSm = useMediaQuery({
+    maxWidth: "40rem",
+  })
+  const boxesLength = isSm ? 20 : 50
+  const boxesPerSide = isSm ? 10 : 25
 
   useFrame((_state, delta) => {
     if (groupRef.current) {
@@ -51,12 +57,12 @@ export const AnimatedBoxes = () => {
 
   const boxes = Array.from(
     {
-      length: 50,
+      length: boxesLength,
     },
     (_, index) => ({
       id: index,
       position: [
-        (index - 25) * 0.75,
+        (index - boxesPerSide) * 0.75,
         0,
         0,
       ],

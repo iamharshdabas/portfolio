@@ -16,10 +16,6 @@ const Works = () => {
     crafted with passion to drive
     results and impact.`
 
-  const mouse = useRef({
-    x: 0,
-    y: 0,
-  })
   const moveX = useRef(null)
   const moveY = useRef(null)
 
@@ -34,16 +30,15 @@ const Works = () => {
     })
 
     gsap.from("#project", {
-      delay: 0.5,
       duration: 1,
       ease: "back.out",
       opacity: 0,
       scrollTrigger: {
-        start: "top 90%",
-        end: "top 60%",
+        end: "top 80%",
+        start: "top 100%",
         trigger: "#project",
       },
-      stagger: 0.5,
+      stagger: 0.25,
       y: 100,
     })
   }, [])
@@ -94,10 +89,8 @@ const Works = () => {
 
   const handleMouseMove = (e) => {
     if (window.innerWidth < 768) return
-    mouse.current.x = e.clientX + 24
-    mouse.current.y = e.clientY + 24
-    moveX.current(mouse.current.x)
-    moveY.current(mouse.current.y)
+    moveX.current(e.clientX)
+    moveY.current(e.clientY)
   }
 
   return (
@@ -169,7 +162,7 @@ const Works = () => {
         ))}
         {/* desktop Flaoting preview image */}
         <div
-          className="-top-1/4 pointer-events-none fixed left-0 z-50 hidden max-w-prose overflow-hidden rounded-2xl bg-dark text-light opacity-0 md:block"
+          className="-top-1/3 pointer-events-none fixed left-0 z-50 hidden max-w-prose overflow-hidden rounded-2xl bg-dark text-light opacity-0 md:block"
           ref={previewRef}
         >
           {currentIndex !== null && (

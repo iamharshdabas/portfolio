@@ -16,8 +16,8 @@ export const AnimatedLine = ({ text, className }) => {
         ease: "back.out",
         opacity: 0,
         scrollTrigger: {
-          start: "top 90%",
-          end: "top 60%",
+          end: "top 80%",
+          start: "top 100%",
           trigger: containerRef.current,
         },
         stagger: 0.5,

@@ -28,8 +28,8 @@ export const Services = () => {
         duration: 1,
         ease: "circ.out",
         scrollTrigger: {
-          end: "top 60%",
-          start: "top 90%",
+          end: "top 80%",
+          start: "top 100%",
           trigger: el,
         },
         y: "60%",

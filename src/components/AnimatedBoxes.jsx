@@ -1,6 +1,6 @@
 import { useFrame } from "@react-three/fiber"
-import { useMediaQuery } from "react-responsive"
 import { useRef } from "react"
+import { useMediaQuery } from "react-responsive"
 import { ExtrudeGeometry, MeshPhysicalMaterial, Shape } from "three"
 
 const shape = new Shape()

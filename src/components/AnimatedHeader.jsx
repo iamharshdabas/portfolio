@@ -13,8 +13,8 @@ export const AnimatedHeader = ({ subTitle, title, text, lineColor = "bg-light", 
     const tl = gsap.timeline({
       scrollTrigger: withScrollTrigger
         ? {
-            start: "top 90%",
-            end: "top 60%",
+            end: "top 80%",
+            start: "top 100%",
             trigger: contextRef.current,
           }
         : undefined,

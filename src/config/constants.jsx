@@ -142,6 +142,37 @@ export const projectsData = [
     image: "images/2.webp",
     name: "Wavify",
   },
+  {
+    bgImage: "https://picsum.photos/600/400?random=3",
+    description:
+      "A terminal-based CLI tool to master Data Structures and Algorithms by typing out solutions to common problems, building muscle memory and coding speed.",
+    frameworks: [
+      {
+        id: 1,
+        name: "React",
+      },
+      {
+        id: 2,
+        name: "Ink",
+      },
+      {
+        id: 3,
+        name: "TypeScript",
+      },
+      {
+        id: 4,
+        name: "Bun",
+      },
+      {
+        id: 5,
+        name: "Yargs",
+      },
+    ],
+    href: "https://github.com/iamharshdabas/dsaify",
+    id: 3,
+    image: "images/3.webp",
+    name: "DSAify",
+  },
 ]
 
 export const socialLinks = [

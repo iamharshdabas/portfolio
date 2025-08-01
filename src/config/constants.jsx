@@ -173,7 +173,7 @@ export const projectsData = [
     id: 3,
     image: "images/3.webp",
     name: "DSAify",
-    preview: "https://iamharshdabas.vercel.app/",
+    preview: "https://www.npmjs.com/package/dsaify",
   },
 ]
 
@@ -250,11 +250,11 @@ export const detailsData = [
   },
   {
     label: "Portfolio Website",
-    value: "https://iamharshdabas.com",
+    value: "https://iamharshdabas.vercel.app",
   },
   {
     label: "Resume",
-    value: "https://iamharshdabas.com/resume",
+    value: "https://iamharshdabas.vercel.app/resume",
   },
   {
     label: "Cover Letter (Template)",

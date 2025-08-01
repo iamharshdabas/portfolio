@@ -1,7 +1,7 @@
 import { useGSAP } from "@gsap/react"
-import { useLocation } from "react-router-dom"
 import gsap from "gsap"
 import { useEffect, useRef, useState } from "react"
+import { useLocation } from "react-router-dom"
 import { navbarLinks, socialLinks } from "../config/constants"
 import { FlowingMenu } from "./FlowingMenu"
 

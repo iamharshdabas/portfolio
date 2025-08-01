@@ -25,7 +25,7 @@ const Resume = () => {
           Save as PDF
         </button>
       </div>
-      <div id="resume-content" className="space-y-4 px-4 text-sm">
+      <div className="space-y-4 px-4 text-sm" id="resume-content">
         <header className="space-y-2 text-center">
           <h1 className="font-bold tracking-wider">Harsh Dabas</h1>
           <div className="flex flex-wrap justify-center gap-x-4 gap-y-1">
@@ -115,7 +115,7 @@ const Resume = () => {
           <p>{educationData.degree}</p>
         </Section>
       </div>
-      <style jsx global>{`
+      <style global jsx>{`
         @media print {
           body * {
             visibility: hidden;
@@ -123,11 +123,11 @@ const Resume = () => {
           #resume-content,
           #resume-content * {
             visibility: visible;
-            font-family: sans-serif !important;
-            color: black !important;
-            background: white !important;
-            text-shadow: none !important;
-            box-shadow: none !important;
+            font-family: sans-serif;
+            color: black;
+            background: white;
+            text-shadow: none;
+            box-shadow: none;
             -webkit-print-color-adjust: exact;
           }
           #resume-content {

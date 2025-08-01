@@ -6,16 +6,16 @@ export const servicesData = [
       "I build fast, responsive, and scalable web applications from the ground up. With a focus on clean architecture and modern technologies, I can deliver a complete front-to-back solution that meets your business needs.",
     items: [
       {
-        description: "(Next.js, React)",
+        description: "(JavaScript, TypeScript, React, Next.js)",
         title: "Frontend Development",
       },
       {
-        description: "(Node.js, Express, Hono)",
+        description: "(Node.js, Express, Hono",
         title: "Backend Development",
       },
       {
-        description: "(PostgreSQL, SQLite)",
-        title: "Database Development",
+        description: "(PostgreSQL, SQLite, Unit Testing)",
+        title: "Database & Testing",
       },
     ],
     title: "Full-Stack Development",
@@ -44,7 +44,7 @@ export const servicesData = [
       "I design and build robust and secure APIs to power your applications. I have experience with RESTful APIs, authentication, and integrating third-party services.",
     items: [
       {
-        description: "(RESTful APIs)",
+        description: "(RESTful API Design)",
         title: "API Design & Development",
       },
       {
@@ -83,7 +83,7 @@ export const projectsData = [
   {
     bgImage: "https://picsum.photos/600/400?random=1",
     description:
-      "A dynamic pricing solution that provides a banner via an API to display coupons based on user geolocation. It helps businesses optimize product pricing across countries, aiming to capture untapped markets with location-based discounts.",
+      "A dynamic pricing API that provides location-based coupons to help businesses optimize product pricing and capture untapped markets.",
     frameworks: [
       {
         id: 1,
@@ -123,7 +123,7 @@ export const projectsData = [
   {
     bgImage: "https://picsum.photos/600/400?random=2",
     description:
-      "An experimental project that transforms plain text into unique, algorithmically generated waveform audio (WAV). Inspired by Angelcore, it converts text to binary sequences which then determine musical notes and rhythmic patterns.",
+      "An experimental tool that transforms plain text into unique, algorithmically generated waveform audio inspired by Angelcore music.",
     frameworks: [
       {
         id: 1,
@@ -146,7 +146,7 @@ export const projectsData = [
   {
     bgImage: "https://picsum.photos/600/400?random=3",
     description:
-      "A terminal-based CLI tool to master Data Structures and Algorithms by typing out solutions to common problems, building muscle memory and coding speed.",
+      "A terminal-based CLI tool for mastering Data Structures and Algorithms by typing out solutions to build muscle memory.",
     frameworks: [
       {
         id: 1,
@@ -204,9 +204,9 @@ export const workExperienceData = [
   {
     company: "BetaTest Solutions Pvt. Ltd.",
     description: [
-      "Spearheaded frontend development of a new trading platform's admin panel, contributing directly to its successful launch.",
-      "Optimized backend API performance, achieving a 50% reduction in response time for a new project, significantly enhancing system efficiency.",
-      "Drove end-to-end frontend development for a new project, ensuring a seamless user experience and contributing to a reduction in bug reports.",
+      "Led frontend development for the Killer Whale Ventures trading platform, contributed to successful launch.",
+      "Achieved a 50% reduction in API response time through backend optimizations, significantly improving system efficiency.",
+      "Reduced bug reports by 30% through meticulous frontend development and testing, ensuring a seamless user experience.",
     ],
     duration: "Mar 2025 - Apr 2025",
     position: "Software Engineer Intern",
@@ -216,9 +216,9 @@ export const workExperienceData = [
     description: [
       "Boosted website performance by 20% through targeted optimizations, leading to improved user engagement and reduced bounce rates.",
       "Enhanced API response times by 15% using Python and Django, directly contributing to more responsive web applications.",
-      "Delivered reliable web applications that consistently met and exceeded client requirements and expectations, fostering strong client relationships and positive feedback.",
+      "Engineered and delivered highly reliable web applications that consistently met and exceeded client requirements, resulting in positive feedback.",
     ],
-    duration: "January 2023 - January 2024",
+    duration: "Jan 2023 - Jan 2024",
     position: "Full Stack Web Development Intern",
   },
 ]

@@ -1,4 +1,4 @@
-import { educationData, projectsData, servicesData, socialLinks, workExperienceData } from "../config/constants"
+import { educationData, projectsData, servicesData, workExperienceData } from "../config/constants"
 
 const Section = ({ children, title }) => {
   return (
@@ -27,23 +27,31 @@ const Resume = () => {
       </div>
       <div className="space-y-4 px-4 text-sm" id="resume-content">
         <header className="space-y-2 text-center">
-          <h1 className="font-bold tracking-wider">Harsh Dabas</h1>
-          <div className="flex flex-wrap justify-center gap-x-4 gap-y-1">
+          <div className="flex items-center justify-between gap-2">
+            <h1 className="font-bold tracking-wider">Harsh Dabas</h1>
+            <h2 className="font-bold tracking-wider">New Delhi, India</h2>
+          </div>
+          <div className="flex justify-between gap-x-4 gap-y-1">
             {[
               {
+                subName: "iamharshdabas.vercel.app",
                 href: "https://iamharshdabas.vercel.app",
                 name: "Portfolio",
               },
-              ...socialLinks,
+              {
+                subName: "iamharshdabas@gmail.com",
+                href: "mailto:iamharshdabas@gmail.com",
+                name: "E-Mail",
+              },
+              {
+                subName: "github.com/iamharshdabas",
+                href: "https://github.com/iamharshdabas",
+                name: "Github",
+              },
             ].map((link) => (
-              <a
-                className="underline underline-offset-2"
-                href={link.href}
-                key={link.name}
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                {link.name}
+              <a href={link.href} rel="noopener noreferrer" target="_blank" key={link.name}>
+                <span className="font-semibold">{link.name}: </span>
+                {link.subName}
               </a>
             ))}
           </div>
@@ -123,7 +131,7 @@ const Resume = () => {
           #resume-content,
           #resume-content * {
             visibility: visible;
-            font-family: sans-serif;
+            font-family: "Roboto", sans-serif;
             color: black;
             background: white;
             text-shadow: none;

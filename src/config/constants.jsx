@@ -123,7 +123,7 @@ export const projectsData = [
   {
     bgImage: "https://picsum.photos/600/400?random=2",
     description:
-      "An experimental project that transforms plain text into unique, algorithmically generated waveform audio (WAV). Inspired by chill phonk, it converts text to binary sequences which then determine musical notes and rhythmic patterns.",
+      "An experimental project that transforms plain text into unique, algorithmically generated waveform audio (WAV). Inspired by Angelcore, it converts text to binary sequences which then determine musical notes and rhythmic patterns.",
     frameworks: [
       {
         id: 1,

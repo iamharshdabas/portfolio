@@ -1,6 +1,9 @@
 import { ReactLenis } from "lenis/react"
 import { lazy, Suspense } from "react"
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom"
 import { Navbar } from "./components/Navbar"
+import Details from "./pages/Details"
+import Resume from "./pages/Resume"
 
 const About = lazy(() =>
   import("./sections/About").then((module) => ({
@@ -26,22 +29,32 @@ const ServicesSummary = lazy(() =>
 )
 const Works = lazy(() => import("./sections/Work"))
 
+const Home = () => (
+  <main>
+    <Suspense fallback={<div />}>
+      <Hero />
+      <ServicesSummary />
+      <Services />
+      <About />
+      <Works />
+      <ContactSummary />
+      <Contact />
+    </Suspense>
+  </main>
+)
+
 const App = () => {
   return (
     <ReactLenis root>
       <div className="relative min-h-screen w-screen bg-light font-sans text-dark">
-        <Navbar />
-        <main>
-          <Suspense fallback={<div />}>
-            <Hero />
-            <ServicesSummary />
-            <Services />
-            <About />
-            <Works />
-            <ContactSummary />
-            <Contact />
-          </Suspense>
-        </main>
+        <Router>
+          <Navbar />
+          <Routes>
+            <Route element={<Home />} path="/" />
+            <Route element={<Resume />} path="/resume" />
+            <Route element={<Details />} path="/details" />
+          </Routes>
+        </Router>
       </div>
     </ReactLenis>
   )

@@ -1,4 +1,4 @@
-import { GithubIcon, InstagramIcon, LinkedinIcon, MailIcon } from "lucide-react"
+import { GithubIcon, LinkedinIcon, MailIcon } from "lucide-react"
 
 export const servicesData = [
   {
@@ -6,16 +6,16 @@ export const servicesData = [
       "I build fast, responsive, and scalable web applications from the ground up. With a focus on clean architecture and modern technologies, I can deliver a complete front-to-back solution that meets your business needs.",
     items: [
       {
-        description: "(Next.js, React, TypeScript, Tailwind CSS)",
+        description: "(Next.js, React)",
         title: "Frontend Development",
       },
       {
-        description: "(Node.js, Express, TypeScript)",
+        description: "(Node.js, Express, Hono)",
         title: "Backend Development",
       },
       {
-        description: "(PostgreSQL, SQLite, Drizzle ORM)",
-        title: "Database Management",
+        description: "(PostgreSQL, SQLite)",
+        title: "Database Development",
       },
     ],
     title: "Full-Stack Development",
@@ -44,11 +44,11 @@ export const servicesData = [
       "I design and build robust and secure APIs to power your applications. I have experience with RESTful APIs, authentication, and integrating third-party services.",
     items: [
       {
-        description: "(RESTful APIs, Express)",
+        description: "(RESTful APIs)",
         title: "API Design & Development",
       },
       {
-        description: "(JWT, bcrypt, Clerk)",
+        description: "(JWT, Third-Party Auth)",
         title: "Authentication Systems",
       },
       {
@@ -118,6 +118,7 @@ export const projectsData = [
     id: 1,
     image: "images/1.webp",
     name: "Parity Deals",
+    preview: "https://parity-deals.vercel.app/",
   },
   {
     bgImage: "https://picsum.photos/600/400?random=2",
@@ -172,6 +173,7 @@ export const projectsData = [
     id: 3,
     image: "images/3.webp",
     name: "DSAify",
+    preview: "https://iamharshdabas.vercel.app/",
   },
 ]
 
@@ -184,17 +186,83 @@ export const socialLinks = [
   {
     href: "https://github.com/iamharshdabas",
     icon: GithubIcon,
-    name: "GitHub",
+    name: "Github",
   },
   {
     href: "https://www.linkedin.com/in/harsh-dabas-454848300/",
     icon: LinkedinIcon,
     name: "LinkedIn",
   },
+]
+
+export const educationData = {
+  degree: "Bachelor of Technology (BTech) in Computer Science",
+  university: "PDM University",
+}
+
+export const workExperienceData = [
   {
-    href: "https://www.instagram.com/iamharshdabas",
-    icon: InstagramIcon,
-    name: "Instagram",
+    company: "BetaTest Solutions Pvt. Ltd.",
+    description: [
+      "Spearheaded frontend development of a new trading platform's admin panel, contributing directly to its successful launch.",
+      "Optimized backend API performance, achieving a 50% reduction in response time for a new project, significantly enhancing system efficiency.",
+      "Drove end-to-end frontend development for a new project, ensuring a seamless user experience and contributing to a reduction in bug reports.",
+    ],
+    duration: "Mar 2025 - Apr 2025",
+    position: "Software Engineer Intern",
+  },
+  {
+    company: "Business Web Solutions",
+    description: [
+      "Boosted website performance by 20% through targeted optimizations, leading to improved user engagement and reduced bounce rates.",
+      "Enhanced API response times by 15% using Python and Django, directly contributing to more responsive web applications.",
+      "Delivered reliable web applications that consistently met and exceeded client requirements and expectations, fostering strong client relationships and positive feedback.",
+    ],
+    duration: "January 2023 - January 2024",
+    position: "Full Stack Web Development Intern",
+  },
+]
+
+export const detailsData = [
+  {
+    label: "Full Name",
+    value: "Harsh Dabas",
+  },
+  {
+    label: "Email",
+    value: socialLinks[0].href.replace("mailto:", ""),
+  },
+  {
+    label: "Phone Number",
+    value: "8810576690",
+  },
+  {
+    label: "Location",
+    value: "New Delhi, India",
+  },
+  {
+    label: "LinkedIn",
+    value: socialLinks[2].href,
+  },
+  {
+    label: "GitHub",
+    value: socialLinks[1].href,
+  },
+  {
+    label: "Portfolio Website",
+    value: "https://iamharshdabas.com",
+  },
+  {
+    label: "Resume",
+    value: "https://iamharshdabas.com/resume",
+  },
+  {
+    label: "Cover Letter (Template)",
+    value: `I am writing to express my interest in the [Job Title] position at [Company Name], which I discovered through [Platform, e.g., LinkedIn]. With a strong background in full-stack development and a passion for creating innovative web solutions, I am confident that my skills and experience align perfectly with the requirements of this role.`,
+  },
+  {
+    label: "Notice Period",
+    value: "Immediately Available",
   },
 ]
 

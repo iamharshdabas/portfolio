@@ -1,4 +1,5 @@
 import { useGSAP } from "@gsap/react"
+import { useLocation } from "react-router-dom"
 import gsap from "gsap"
 import { useEffect, useRef, useState } from "react"
 import { navbarLinks, socialLinks } from "../config/constants"
@@ -14,6 +15,7 @@ export const Navbar = () => {
   const iconTl = useRef(null)
   const [isOpen, setIsOpen] = useState(false)
   const [showBurger, setShowBurger] = useState(true)
+  const location = useLocation()
   useGSAP(() => {
     gsap.set(navRef.current, {
       xPercent: 100,
@@ -108,6 +110,8 @@ export const Navbar = () => {
     setIsOpen(!isOpen)
   }
 
+  if (location.pathname !== "/") return
+
   return (
     <>
       <nav
@@ -127,7 +131,7 @@ export const Navbar = () => {
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                <socialLink.icon className="size-5 md:size-6 lg:size-7" />
+                {socialLink.icon && <socialLink.icon className="size-5 md:size-6 lg:size-7" />}
               </a>
             ))}
           </div>
@@ -135,17 +139,11 @@ export const Navbar = () => {
       </nav>
       <button
         aria-label="nav bar toggle"
-        className="fixed top-8 right-8 z-50 flex size-10 cursor-pointer flex-col items-center justify-center gap-1 rounded-full bg-dark transition-all duration-300 md:size-12 lg:size-14"
+        className="fixed top-8 right-8 z-50 flex size-10 cursor-pointer flex-col items-center justify-center gap-1 rounded-full bg-dark transition-all duration-300 md:size-12 lg:size-14 print:hidden"
         onClick={toggleMenu}
-        style={
-          showBurger || isOpen
-            ? {
-                clipPath: "circle(50% at 50% 50%)",
-              }
-            : {
-                clipPath: "circle(0% at 50% 50%)",
-              }
-        }
+        style={{
+          clipPath: showBurger || isOpen ? "circle(50% at 50% 50%)" : "circle(0% at 50% 50%)",
+        }}
         type="button"
       >
         <span className="h-0.5 w-2/3 rounded-full bg-light" ref={topLineRef}></span>

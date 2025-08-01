@@ -1,4 +1,3 @@
-import { GithubIcon, LinkIcon } from "lucide-react"
 import { educationData, projectsData, servicesData, socialLinks, workExperienceData } from "../config/constants"
 
 const Section = ({ children, title }) => {
@@ -26,7 +25,7 @@ const Resume = () => {
           Save as PDF
         </button>
       </div>
-      <div className="space-y-4 px-4 text-sm">
+      <div id="resume-content" className="space-y-4 px-4 text-sm">
         <header className="space-y-2 text-center">
           <h1 className="font-bold tracking-wider">Harsh Dabas</h1>
           <div className="flex flex-wrap justify-center gap-x-4 gap-y-1">
@@ -38,14 +37,13 @@ const Resume = () => {
               ...socialLinks,
             ].map((link) => (
               <a
-                className="flex items-center gap-1 hover:underline"
+                className="underline underline-offset-2"
                 href={link.href}
                 key={link.name}
                 rel="noopener noreferrer"
                 target="_blank"
               >
                 {link.name}
-                <LinkIcon className="size-3.5" />
               </a>
             ))}
           </div>
@@ -92,17 +90,14 @@ const Resume = () => {
             {projectsData.map((project) => (
               <div key={project.id}>
                 <div className="flex items-center justify-between gap-2">
-                  <div className="flex items-center gap-2 font-semibold">
-                    <a href={project.preview || project.href} rel="noopener noreferrer" target="_blank">
-                      {project.name}
-                    </a>
-                    <a href={project.preview || project.href} rel="noopener noreferrer" target="_blank">
-                      <LinkIcon className="size-3.5" />
-                    </a>
-                    <a href={project.href} rel="noopener noreferrer" target="_blank">
-                      <GithubIcon className="size-4" />
-                    </a>
-                  </div>
+                  <a
+                    className="underline underline-offset-2"
+                    href={project.preview || project.href}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    {project.name}
+                  </a>
                   <div className="flex items-center gap-2">
                     {project.frameworks.map((framework) => (
                       <span key={framework.id}>{framework.name}</span>
@@ -120,6 +115,34 @@ const Resume = () => {
           <p>{educationData.degree}</p>
         </Section>
       </div>
+      <style jsx global>{`
+        @media print {
+          body * {
+            visibility: hidden;
+          }
+          #resume-content,
+          #resume-content * {
+            visibility: visible;
+            font-family: sans-serif !important;
+            color: black !important;
+            background: white !important;
+            text-shadow: none !important;
+            box-shadow: none !important;
+            -webkit-print-color-adjust: exact;
+          }
+          #resume-content {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem;
+            margin: 0;
+          }
+          #resume-content a {
+            text-decoration: underline;
+          }
+        }
+      `}</style>
     </div>
   )
 }

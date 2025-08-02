@@ -10,7 +10,7 @@ export const servicesData = [
         title: "Frontend Development",
       },
       {
-        description: "(Node.js, Express, Hono",
+        description: "(Node.js, Express, Hono)",
         title: "Backend Development",
       },
       {
